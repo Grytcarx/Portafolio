@@ -36,6 +36,7 @@ header nav ul li a:active {
     color: var(--secundario);
 }
 
+
 header, main {
     width: 85%;
     max-width: 82rem;
@@ -89,10 +90,11 @@ header .name-container .foto {
     pointer-events: none;
 }
 
-
-
-header {
-    position: relative;
+.particles-js {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
 }
 
 
@@ -115,7 +117,7 @@ header .menu {
     width: 4rem;
     height: 4rem;
     background-color: var(--principal);
-    z-index: 300;
+    z-index: 10000;
     border-radius: 50%;
     cursor: pointer;
     border: .5rem solid var(--secundario);
