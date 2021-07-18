@@ -31,10 +31,25 @@ i::selection,
 img::selection,
 input::selection,
 textarea::selection,
-header nav ul li a:active {
+header nav ul li a:active::selection {
     background: var(--principal);
     color: var(--secundario);
 }
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill, 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #009472;
+}
+
 
 
 header, main {
@@ -417,6 +432,13 @@ main .contactame form textarea {
     border: none;
     outline: none;
     font-size: 1.4rem;
+    color: #009472;
+    font-weight: 700;
+}
+main .contactame form input::placeholder,
+main .contactame form textarea::placeholder {
+    color: #32c09f;
+    font-weight: 100;
 }
 main .contactame form textarea {
     height: 25rem;
@@ -424,7 +446,15 @@ main .contactame form textarea {
     border-radius: 2rem;
     font-family: 'Roboto', sans-serif;
 }
-
+main .contactame form .btn-enviar {
+    background-color: #58ffd8;
+    border: 0.2rem solid #00795d;
+    max-width: 15rem;
+    height: 4rem;
+    margin: 0 auto;
+    color: #00795d;
+    font-weight: 700;
+}
 
 
 
@@ -440,7 +470,7 @@ footer {
     padding-block: 2rem;
     line-height: 2rem;
     font-size: 1.2rem;
-    height: var(25rem);
+    height: 25rem;
 }
 footer i {
     display: block;
