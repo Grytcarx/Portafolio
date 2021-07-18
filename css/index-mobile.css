@@ -92,6 +92,19 @@ header {
     position: relative;
 }
 
+
+@keyframes brillar-menu {
+    0% {
+        opacity: 0.4;
+        -webkit-box-shadow: 0px 0px 20px 10px var(--principal); 
+        box-shadow: 0px 0px 20px 10px var(--principal);
+    }
+    100% {
+        opacity: 1;
+        -webkit-box-shadow: 0px 0px 55px 10px var(--principal); 
+    box-shadow: 0px 0px 55px 10px var(--principal);
+    }
+}
 header .menu {
     position: fixed;
     top: 1rem;
@@ -104,14 +117,18 @@ header .menu {
     cursor: pointer;
     border: .5rem solid var(--secundario);
     opacity: 1;
-    -webkit-box-shadow: 0px 0px 55px 10px var(--principal); 
-    box-shadow: 0px 0px 55px 10px var(--principal);
+    animation-name: brillar-menu;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
     transition: all var(--tiempo-menu);
 }
 header .menu-activo {
     -webkit-box-shadow: 0px 0px 0px 0px var(--principal); 
     box-shadow: 0px 0px 0px 0px var(--principal);
     opacity: .5;
+    animation-name: none;
 }
 
 
@@ -214,22 +231,55 @@ main .mis-skills .skills-container {
     grid-template-columns: 1fr;
     gap: 2rem;
     margin-top: 1.5rem;
+    text-align: center;
 }
 main .mis-skills .skills-container article {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
     width: max-content;
     margin: 0 auto;
     gap: 1rem;
 }
+
+@keyframes brillar-barras {
+    0% {
+        opacity: 0.3;
+        -webkit-box-shadow: 0px 0px 0px 0px var(--principal); 
+        box-shadow: 0px 0px 0px 0px var(--principal);
+    }
+    100% {
+        opacity: 1;
+        -webkit-box-shadow: 0px 0px 10px 1px var(--principal); 
+        box-shadow: 0px 0px 10px 1px var(--principal);
+    }
+}
+@keyframes brillar-letras {
+    0% {
+        opacity: 0.3;
+        text-shadow: 0px 0px 0px var(--secundario);
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 0px 0px 2px var(--secundario);
+    }
+}
 main .mis-skills .skills-container article h4 {
     color: var(--secundario);
     font-size: 2rem;
+    animation-name: brillar-letras;
 }
 main .mis-skills .skills-container article div {
-    width: 17rem;
+    width: 15rem;
     height: 2.5rem;
     border-radius: 30rem;
-    background: linear-gradient(90deg, var(--secundario) 70%, var(--fondo1) 80%);
+    animation-name: brillar-barras;
+}
+main .mis-skills .skills-container article h4,
+main .mis-skills .skills-container article div {
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
 }
 
 
@@ -310,11 +360,14 @@ main .contactame form textarea {
 
 
 footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-top: 6rem;
     background-color: var(--principal);
     text-align: center;
     padding-block: 2rem;
-    height: 15rem;
+    height: 20rem;
     line-height: 2rem;
     font-size: 1.2rem;
 }
