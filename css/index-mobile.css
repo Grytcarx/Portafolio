@@ -83,7 +83,6 @@ main .contactame form textarea:focus {
     height: 100%;
     background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(115,115,115,0) 20%, rgba(50,50,50,0) 80%, rgba(0,0,0,1) 100%);
     z-index: 100;
-    pointer-events:none;
     pointer-events: none;
 }
 
@@ -158,10 +157,12 @@ header nav {
     opacity: 0;
     width: 100vw;
     height: 100vh;
+    pointer-events: none;
     transition: all var(--tiempo-menu);
 }
 header .nav-activo {
     opacity: 1;
+    pointer-events: all;
 }
 header nav ul{
     display: flex;
