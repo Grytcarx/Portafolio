@@ -1,0 +1,323 @@
+:root {
+    --fondo1: #02002B;
+    --fondo2: #000;
+    --principal: #00E5AE;
+    --secundario: #8186F1;
+    --tiempo-menu: .5s;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    position: relative;
+    background: linear-gradient(170.04deg, var(--fondo1) 0%, var(--fondo2) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+}
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+p::selection,
+i::selection,
+img::selection,
+input::selection,
+textarea::selection,
+header nav ul li a:active {
+    background: var(--principal);
+    color: var(--secundario);
+}
+
+header, main {
+    width: 85%;
+    max-width: 82rem;
+    margin: 0 auto;
+}
+
+header,
+main .sobre-mi, 
+main .mis-skills, 
+main .mis-proyectos, 
+main .contactame {
+    padding-block: 4rem;
+}
+
+header nav ul li a,
+header .name-container,
+main .sobre-mi h3,
+main .mis-skills h3,
+main .mis-proyectos h3,
+main .contactame h3,
+main .contactame h4 {
+    color: var(--principal);
+}
+
+main .sobre-mi h3,
+main .mis-skills h3,
+main .mis-proyectos h3,
+main .contactame h3 {
+    font-size: 2.2rem;
+}
+
+
+main .mis-skills .skills-container article div, 
+main .mis-proyectos .proyectos-container article,
+main .contactame form,
+main .contactame form input:focus,
+main .contactame form textarea:focus {
+    border: .2rem solid var(--principal);
+}
+
+
+.mascara {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(115,115,115,0) 20%, rgba(50,50,50,0) 80%, rgba(0,0,0,1) 100%);
+    z-index: 100;
+    pointer-events:none;
+    pointer-events: none;
+}
+
+
+
+header {
+    position: relative;
+}
+
+header .menu {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--principal);
+    z-index: 300;
+    border-radius: 50%;
+    cursor: pointer;
+    border: .5rem solid var(--secundario);
+    opacity: 1;
+    -webkit-box-shadow: 0px 0px 55px 10px var(--principal); 
+    box-shadow: 0px 0px 55px 10px var(--principal);
+    transition: all var(--tiempo-menu);
+}
+header .menu-activo {
+    -webkit-box-shadow: 0px 0px 0px 0px var(--principal); 
+    box-shadow: 0px 0px 0px 0px var(--principal);
+    opacity: .5;
+}
+
+
+header .name-container {
+    text-align: center;
+    line-height: 3rem;
+}
+header .name-container .foto {
+    --ancho: 65vw;
+    --ancho-maximmo: 25rem;
+    display: flex;
+    width: var(--ancho);
+    height: var(--ancho);
+    max-width: var(--ancho-maximmo);
+    max-height: var(--ancho-maximmo);
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+header .name-container .foto img {
+    width: 100%;
+    object-fit: cover;
+}
+header .name-container .texto h1 {
+    font-size: 3rem;
+    margin-bottom: .7rem;
+}
+header .name-container .texto h2 {
+    font-size: 2rem;
+    margin-bottom: .7rem;
+}
+
+
+
+header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle, rgb(22, 1, 55) 0%, black 60%);
+    z-index: 200;
+    overflow: hidden;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: all var(--tiempo-menu);
+}
+header .nav-activo {
+    opacity: 1;
+}
+header nav ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+}
+header nav ul li {
+    width: 100%;
+    text-align: center;
+}
+header nav ul li .texto-menu {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    font-size: 0rem;
+    line-height: 0rem;
+    transition: all var(--tiempo-menu);
+    text-shadow: 0px 0px 10px var(--principal);
+}
+header nav ul li .texto-menu-activo {
+    font-size: 2.6rem;
+    line-height: 4rem;
+}
+
+
+
+
+main .sobre-mi p {
+    margin-top: 1.6rem;
+    font-size: 1.4rem;
+    color: white;
+    line-height: 2rem;
+}
+main .sobre-mi p i {
+    font-weight: 700;
+}
+
+
+
+main .mis-skills h3 {
+    width: max-content;
+    margin-inline-start: auto;
+}
+main .mis-skills .skills-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+main .mis-skills .skills-container article {
+    display: flex;
+    width: max-content;
+    margin: 0 auto;
+    gap: 1rem;
+}
+main .mis-skills .skills-container article h4 {
+    color: var(--secundario);
+    font-size: 2rem;
+}
+main .mis-skills .skills-container article div {
+    width: 17rem;
+    height: 2.5rem;
+    border-radius: 30rem;
+    background: linear-gradient(90deg, var(--secundario) 70%, var(--fondo1) 80%);
+}
+
+
+main .mis-proyectos .proyectos-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 0 auto;
+    width: fit-content;
+}
+main .mis-proyectos .proyectos-container article {
+    position: relative;
+    margin-top: 1.5rem;
+    width: 26rem;
+    border-radius: 3rem;
+    overflow: hidden;
+}
+main .mis-proyectos .proyectos-container article img {
+    width: 100%;
+    object-fit: cover;
+}
+main .mis-proyectos .proyectos-container article div {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(0, var(--secundario) 50%, rgba(255,255,255,0) 100%);
+    top: 60%;
+    justify-content: center;
+    align-items: center;
+}
+main .mis-proyectos .proyectos-container article div h4 {
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    color: white;
+}
+
+
+main .contactame {
+    text-align: center;
+}
+main .contactame h4 {
+    margin-top: .8rem;
+    font-size: 1.5rem;
+}
+main .contactame form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 31rem;
+    padding: 1.3rem;
+    margin: 1.5rem auto 0;
+    background-color: var(--secundario);
+    border-radius: 3rem;
+}
+main .contactame form input {
+    height: 3rem;
+    border-radius: 3rem;
+}
+main .contactame form input,
+main .contactame form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    font-size: 1.4rem;
+}
+main .contactame form textarea {
+    height: 25rem;
+    resize: none;
+    border-radius: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+
+footer {
+    margin-top: 6rem;
+    background-color: var(--principal);
+    text-align: center;
+    padding-block: 2rem;
+    height: 15rem;
+    line-height: 2rem;
+    font-size: 1.2rem;
+}
+footer i {
+    display: block;
+    margin-top: 1.1rem;
+}
