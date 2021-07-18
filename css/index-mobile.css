@@ -12,6 +12,7 @@
 }
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 body {
     position: relative;
@@ -19,6 +20,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Roboto', sans-serif;
+    min-width: 100%;
 }
 h1::selection,
 h2::selection,
@@ -70,7 +72,8 @@ main .mis-skills .skills-container article div,
 main .mis-proyectos .proyectos-container article,
 main .contactame form,
 main .contactame form input:focus,
-main .contactame form textarea:focus {
+main .contactame form textarea:focus,
+header .name-container .foto {
     border: .2rem solid var(--principal);
 }
 
@@ -128,7 +131,7 @@ header .menu-activo {
     -webkit-box-shadow: 0px 0px 0px 0px var(--principal); 
     box-shadow: 0px 0px 0px 0px var(--principal);
     opacity: .5;
-    animation-name: none;
+    animation: none;
 }
 
 
@@ -164,23 +167,64 @@ header .name-container .texto h2 {
 
 
 
+@keyframes brillar-menu-fondo {
+    0% {
+        background: radial-gradient(circle, rgb(22, 1, 55) 0%, black 60%);
+    }
+    10% {
+        background: radial-gradient(circle, rgb(22, 1, 55) 2%, black 62%);
+    }
+    20% {
+        background: radial-gradient(circle, rgb(22, 1, 55) 4%, black 64%);
+    }
+    30% {
+        background: radial-gradient(circle, rgb(22, 1, 55) 6%, black 66%);
+    }
+    40% {
+        background: radial-gradient(circle, rgb(22, 1, 55) 8%, black 68%);
+    }
+    50% {
+        background: radial-gradient(circle, rgb(22, 1, 55) 10%, black 70%);
+    }
+    50% {
+        background: radial-gradient(circle, rgb(22, 1, 55) 12%, black 72%);
+    }
+    70% {
+        background: radial-gradient(circle, rgb(22, 1, 55) 14%, black 74%);
+    }
+    80% {
+        background: radial-gradient(circle, rgb(22, 1, 55) 16%, black 76%);
+    }
+    90% {
+        background: radial-gradient(circle, rgb(22, 1, 55) 18%, black 78%);
+    }
+    100% {
+        background: radial-gradient(circle, rgb(22, 1, 55) 20%, black 80%);
+    }
+}
 header nav {
     position: fixed;
     top: 0;
     left: 0;
-    background: radial-gradient(circle, rgb(22, 1, 55) 0%, black 60%);
     z-index: 200;
     overflow: hidden;
     opacity: 0;
     width: 100vw;
     height: 100vh;
     pointer-events: none;
+    animation: none;
     transition: all var(--tiempo-menu);
 }
 header .nav-activo {
     opacity: 1;
     pointer-events: all;
+    animation-name: brillar-menu-fondo;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
 }
+
 header nav ul{
     display: flex;
     flex-direction: column;
@@ -193,6 +237,17 @@ header nav ul li {
     width: 100%;
     text-align: center;
 }
+
+@keyframes brillar-menu-letras {
+    0% {
+        opacity: 0.7;
+        text-shadow: 0px 0px 0px var(--secundario);
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 0px 0px 20px var(--secundario);
+    }
+}
 header nav ul li .texto-menu {
     display: block;
     text-decoration: none;
@@ -200,16 +255,23 @@ header nav ul li .texto-menu {
     font-size: 0rem;
     line-height: 0rem;
     transition: all var(--tiempo-menu);
-    text-shadow: 0px 0px 10px var(--principal);
+    animation: none;
 }
 header nav ul li .texto-menu-activo {
     font-size: 2.6rem;
-    line-height: 4rem;
+    line-height: 5rem;
+    animation-name: brillar-menu-letras;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
 }
 
 
 
-
+main {
+    /* min-height: calc(100vh - (var(--alto-footer) + var(--margin-arriba-footer))); */
+}
 main .sobre-mi p {
     margin-top: 1.6rem;
     font-size: 1.4rem;
@@ -230,20 +292,18 @@ main .mis-skills .skills-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    margin-top: 1.5rem;
     text-align: center;
+    width: max-content;
+    margin: 1.5rem auto 0;
 }
 main .mis-skills .skills-container article {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    width: max-content;
-    margin: 0 auto;
+    display: flex;
     gap: 1rem;
 }
 
 @keyframes brillar-barras {
     0% {
-        opacity: 0.3;
+        opacity: 0.5;
         -webkit-box-shadow: 0px 0px 0px 0px var(--principal); 
         box-shadow: 0px 0px 0px 0px var(--principal);
     }
@@ -255,28 +315,36 @@ main .mis-skills .skills-container article {
 }
 @keyframes brillar-letras {
     0% {
-        opacity: 0.3;
+        opacity: 0.5;
         text-shadow: 0px 0px 0px var(--secundario);
     }
     100% {
         opacity: 1;
-        text-shadow: 0px 0px 2px var(--secundario);
+        text-shadow: 0px 0px 3px var(--secundario);
     }
 }
 main .mis-skills .skills-container article h4 {
+    display: flex;
+    width: 6rem;
     color: var(--secundario);
     font-size: 2rem;
     animation-name: brillar-letras;
 }
+main .mis-skills .skills-container article .tecnologia {
+    justify-content: flex-end;
+}
+main .mis-skills .skills-container article .porcentaje-skill {
+    text-align: start;
+}
 main .mis-skills .skills-container article div {
-    width: 15rem;
+    width: 120px;
     height: 2.5rem;
     border-radius: 30rem;
     animation-name: brillar-barras;
 }
 main .mis-skills .skills-container article h4,
 main .mis-skills .skills-container article div {
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-timing-function: ease-in;
@@ -321,7 +389,7 @@ main .mis-proyectos .proyectos-container article div h4 {
 main .contactame {
     text-align: center;
 }
-main .contactame h4 {
+main .contactame .texto h4 {
     margin-top: .8rem;
     font-size: 1.5rem;
 }
@@ -360,16 +428,17 @@ main .contactame form textarea {
 
 
 footer {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 6rem;
+    margin-top: var(6rem);
     background-color: var(--principal);
     text-align: center;
     padding-block: 2rem;
-    height: 20rem;
     line-height: 2rem;
     font-size: 1.2rem;
+    height: var(25rem);
 }
 footer i {
     display: block;

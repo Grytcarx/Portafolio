@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css//index-mobile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index-mobile.css">
+    <link rel="stylesheet" href="./css/tablet.css" media="(min-width: 48em)">
+    <link rel="stylesheet" href="./css/desktop.css" media="(min-width: 64em)">
     <title>Victor Osorio Parra</title>
 </head>
 <body>
@@ -39,7 +41,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main">
         <section id="sobre-mi" class="sobre-mi">
             <h3>Sobre mi</h3>
             <p>Mi nombre es Victor Manuel Osorio Parra, soy de Colombia, tengo 22 años y soy una persona autodidacta al 100%. Me gusta mucho aprender sobre el área del desarrollo de tecnologías,  además de superarme cada día tanto personal como profesionalmente.</p>
@@ -98,8 +100,10 @@
         </section>
 
         <section id="contactame" class="contactame">
-            <h3>Contactame!</h3>
-            <h4>pongamonos en contacto y demos inicio al proyecto!</h4>
+            <div class="texto">
+                <h3>Contactame!</h3>
+                <h4>Pongamonos en contacto y demos inicio al proyecto!</h4>
+            </div>
             <form action="">
                 <input type="text" name="nombre" placeholder="Escribe tu nombre!">
                 <input type="email" name="email" placeholder="Escribe tu correo electrónico!">
@@ -108,7 +112,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer id="footer">
         <p>Victor Osorio Parra</p>
         <p>viccman19999@hotmail.com</h4>
         <p>(+57) 3143428541</p>
@@ -117,5 +121,6 @@
 
     <script src="./js/menu.js"></script>
     <script src="./js/porcentajes-skills.js"></script>
+    <script src="./js/acomodar-footer.js"></script>
 </body>
 </html>

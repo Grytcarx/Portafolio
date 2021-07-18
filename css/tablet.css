@@ -1,0 +1,40 @@
+header .name-container {
+    display: flex;
+    align-items: center;
+    max-width: 700px;
+}
+header .name-container .texto {
+    text-align: end;
+}
+header .name-container .texto h1 {
+    font-size: 3.6rem;
+    margin-bottom: 2.5rem;
+}
+header .name-container .texto h2 {
+    font-size: 2.4rem;
+}
+
+
+
+main .mis-skills .skills-container,
+main .mis-proyectos .proyectos-container {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+main .contactame {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+    max-width: max-content;
+    margin: 0 auto;
+}
+main .contactame form {
+    display: flex;
+    margin: 1.5rem;
+    width: 400px;
+}
+main .contactame .texto {
+    max-width: 200px;
+}

@@ -1,0 +1,72 @@
+header .menu {
+    animation: none;
+    display: none;
+}
+
+@keyframes brillar-menu-fondo {
+    0% {
+        background-color: rgba(22, 1, 55, 0);
+    }
+    10% {
+        background-color: rgba(22, 1, 55, .1);
+    }
+    20% {
+        background-color: rgba(22, 1, 55, .2);
+    }
+    30% {
+        background-color: rgba(22, 1, 55, .3);
+    }
+    40% {
+        background-color: rgba(22, 1, 55, .4);
+    }
+    50% {
+        background-color: rgba(22, 1, 55, .5);
+    }
+    50% {
+        background-color: rgba(22, 1, 55, .6);
+    }
+    70% {
+        background-color: rgba(22, 1, 55, .7);
+    }
+    80% {
+        background-color: rgba(22, 1, 55, .8);
+    }
+    90% {
+        background-color: rgba(22, 1, 55, .9);
+    }
+    100% {
+        background-color: rgba(22, 1, 55, 1);
+    }
+}
+header nav {
+    position: relative;
+    width: 100%;
+    height: auto;
+    pointer-events: all;
+    opacity: 1;
+    animation-name: brillar-menu-fondo;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+    border-radius: 30px;
+}
+header nav ul {
+    flex-direction: row;
+}
+header nav ul li .texto-menu {
+    font-size: 2.6rem;
+    line-height: 5rem;
+    opacity: 1;
+    animation-name: brillar-menu-letras;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+}
+
+
+main .mis-skills .skills-container,
+main .mis-proyectos .proyectos-container {
+    grid-template-columns: repeat(3, 1fr);
+}
