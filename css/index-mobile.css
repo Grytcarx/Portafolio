@@ -122,7 +122,7 @@ header .name-container .foto {
     100% {
         opacity: 1;
         -webkit-box-shadow: 0px 0px 55px 10px var(--principal); 
-    box-shadow: 0px 0px 55px 10px var(--principal);
+        box-shadow: 0px 0px 55px 10px var(--principal);
     }
 }
 header .menu {
@@ -168,6 +168,14 @@ header .name-container .foto {
     overflow: hidden;
     margin: 0 auto;
     margin-bottom: 2rem;
+    -webkit-box-shadow: 0px 0px 0px 0px var(--principal); 
+    box-shadow: 0px 0px 0px 0px var(--principal);
+    transition: all 2s;
+}
+header .name-container .foto:hover,
+header .name-container .foto:focus {
+    -webkit-box-shadow: 0px 0px 100px 3px var(--principal); 
+    box-shadow: 0px 0px 100px 3px var(--principal);
 }
 header .name-container .foto img {
     width: 100%;
@@ -479,7 +487,6 @@ main .mi-canvas canvas {
 }
 
 
-
 footer {
     width: 100%;
     display: flex;
@@ -496,4 +503,26 @@ footer {
 footer i {
     display: block;
     margin-top: 1.1rem;
+}
+
+
+
+@keyframes brillar-div {
+    0% {
+        opacity: 0.05;
+        -webkit-box-shadow: 0px 0px 0px 0px var(--principal); 
+        box-shadow: 0px 0px 0px 0px var(--principal);
+    }
+    100% {
+        opacity: 0.5;
+        -webkit-box-shadow: 0px 0px 10px 1px var(--secundario); 
+        box-shadow: 0px 0px 100px 30px var(--secundario);
+    }
+}
+#fondo-animado div {
+    animation-name: brillar-div;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
 }
