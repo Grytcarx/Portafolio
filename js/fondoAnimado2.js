@@ -1,7 +1,7 @@
 const sizeCirculo = 20; //pixeles
-const numCirculos = 10;
-const velocidadMS = 30;
-const desplazamientoPixeles = 4;
+const numCirculos = 7;
+const velocidadMS = 50;
+const desplazamientoPixeles = 5;
 const anchoLinea = 3;
 const colorLinea = "#00E5AE";
 const colorRelleno = "#8186F1";
@@ -116,5 +116,6 @@ CrearCirculos();
 fondo.appendChild(cajaTempora);
 setInterval(()=>{
     MoverDivs();
-    // Mover();
+    anchoFondo = screen.width;
+    altoFondo = screen.height;
 },velocidadMS);
