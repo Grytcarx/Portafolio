@@ -61,7 +61,6 @@ function CrearCirculos(){
 
 function MoverDivs(){
     for(let i=0; i<numCirculos; i++) {
-        console.log(i);
         let camino=0;
         if(circulos[i][0]!=circulos[i][2]){
             if(circulos[i][0]>circulos[i][2]){
