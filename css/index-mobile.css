@@ -457,6 +457,27 @@ main .contactame form .btn-enviar {
 }
 
 
+@keyframes opacidad-canvas {
+    0% {
+        opacity: .03;
+    }
+    100% {
+        opacity: .3;
+    }
+}
+main .mi-canvas canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: -1;
+    animation-name: opacidad-canvas;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+}
+
 
 
 footer {
