@@ -85,7 +85,7 @@ main .contactame h3 {
 
 
 main .mis-skills .skills-container article div, 
-main .mis-proyectos .proyectos-container div article,
+main .mis-proyectos .proyectos-container .article-container .proyecto,
 main .contactame form,
 main .contactame form input:focus,
 main .contactame form textarea:focus,
@@ -394,6 +394,13 @@ main .mis-proyectos .proyectos-container  .article-container .proyecto {
     border-radius: 3rem;
     overflow: hidden;
     cursor: pointer;
+    -webkit-box-shadow: 0px 0px 0px 0px var(--principal); 
+    box-shadow: 0px 0px 0px 0px var(--principal);
+}
+main .mis-proyectos .proyectos-container  .article-container .proyecto:hover,
+main .mis-proyectos .proyectos-container  .article-container .proyecto:focus {
+    -webkit-box-shadow: 0px 0px 55px 10px var(--principal); 
+    box-shadow: 0px 0px 30px 2px var(--principal);
 }
 main .mis-proyectos .proyectos-container  .article-container  .proyecto img {
     width: 100%;
