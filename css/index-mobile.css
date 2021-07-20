@@ -13,6 +13,7 @@
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
+    height: 100%; /*Esto para que el footer se quede abajo*/
 }
 body {
     position: relative;
@@ -21,6 +22,10 @@ body {
     background-attachment: fixed;
     font-family: 'Roboto', sans-serif;
     min-width: 100%;
+
+    display: flex; /*Esto para que el footer se quede abajo*/
+    flex-direction: column; /*Esto para que el footer se quede abajo*/
+    min-height: 100%; /*Esto para que el footer se quede abajo*/
 }
 h1::selection,
 h2::selection,
@@ -65,6 +70,24 @@ main .mis-proyectos,
 main .contactame {
     padding-block: 4rem;
 }
+
+
+main .sobre-mi, 
+main .mis-skills, 
+main .mis-proyectos, 
+main .contactame {
+    /* Para animacion de scroll */
+    transition: all 1s;
+    opacity: 0;
+    margin-left: -100%;
+}
+main .seccionVista {
+    /* Para animacion de scroll */
+    opacity: 1;
+    margin-left: 0%;
+}
+
+
 
 header nav ul li a,
 header .name-container,
@@ -150,6 +173,7 @@ header .menu-activo {
     opacity: .5;
     animation: none;
 }
+
 
 
 header .name-container {
@@ -295,7 +319,7 @@ header nav ul li .texto-menu-activo {
 
 
 main {
-    /* min-height: calc(100vh - (var(--alto-footer) + var(--margin-arriba-footer))); */
+    padding-bottom: 50px;
 }
 main .sobre-mi p {
     margin-top: 1.6rem;
@@ -423,6 +447,8 @@ main .mis-proyectos .proyectos-container .article-container  .proyecto div h4 {
 }
 
 
+
+
 main .contactame {
     text-align: center;
 }
@@ -450,17 +476,17 @@ main .contactame {
         transform: rotateZ(0deg);
     }
 }
-main .contactame .texto {
+main .contactame .contenedor .texto {
     animation-name: balanceo-contactame-texto;
     animation-duration: 7s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in;
 }
-main .contactame .texto h4 {
+main .contactame .contenedor .texto h4 {
     margin-top: .8rem;
     font-size: 1.5rem;
 }
-main .contactame form {
+main .contactame .contenedor form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -471,12 +497,12 @@ main .contactame form {
     background-color: var(--secundario);
     border-radius: 3rem;
 }
-main .contactame form input {
+main .contactame .contenedor form input {
     height: 3rem;
     border-radius: 3rem;
 }
-main .contactame form input,
-main .contactame form textarea {
+main .contactame .contenedor form input,
+main .contactame .contenedor form textarea {
     width: 100%;
     padding: 1rem;
     border: none;
@@ -485,18 +511,18 @@ main .contactame form textarea {
     color: #009472;
     font-weight: 700;
 }
-main .contactame form input::placeholder,
-main .contactame form textarea::placeholder {
+main .contactame .contenedor form input::placeholder,
+main .contactame .contenedor form textarea::placeholder {
     color: #32c09f;
     font-weight: 100;
 }
-main .contactame form textarea {
+main .contactame .contenedor form textarea {
     height: 25rem;
     resize: none;
     border-radius: 2rem;
     font-family: 'Roboto', sans-serif;
 }
-main .contactame form .btn-enviar {
+main .contactame .contenedor form .btn-enviar {
     background-color: #58ffd8;
     border: 0.2rem solid #00795d;
     max-width: 15rem;
@@ -507,6 +533,9 @@ main .contactame form .btn-enviar {
 }
 
 
+
+
+
 @keyframes opacidad-canvas {
     0% {
         opacity: .03;
@@ -515,7 +544,7 @@ main .contactame form .btn-enviar {
         opacity: .3;
     }
 }
-main .mi-canvas canvas {
+/* main .mi-canvas canvas {
     position: fixed;
     top: 0;
     left: 0;
@@ -526,7 +555,7 @@ main .mi-canvas canvas {
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-timing-function: ease-in;
-}
+} */
 
 
 footer {
@@ -534,18 +563,20 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: var(6rem);
     background-color: var(--principal);
     text-align: center;
     padding-block: 2rem;
     line-height: 2rem;
     font-size: 1.2rem;
     height: 25rem;
+    margin-top: auto; /*Estp  para que el footer se quede abajo*/
 }
 footer i {
     display: block;
     margin-top: 1.1rem;
 }
+
+
 
 
 

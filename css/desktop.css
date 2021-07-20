@@ -3,6 +3,7 @@ header .menu {
     display: none;
 }
 
+
 @keyframes brillar-menu-fondo {
     0% {
         background-color: rgba(22, 1, 55, 0);
@@ -41,6 +42,9 @@ header .menu {
 header nav {
     position: relative;
     width: 100%;
+    max-width: 100%;
+    left: auto;
+    transform: translateX(0%);
     height: auto;
     pointer-events: all;
     opacity: 1;
@@ -50,7 +54,17 @@ header nav {
     animation-direction: alternate;
     animation-timing-function: ease-in;
     border-radius: 30px;
+    transition: all .5s;
 }
+header .nav-movible {
+    position: fixed;
+    width: 85%;
+    max-width: 82rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
 header nav ul {
     flex-direction: row;
 }

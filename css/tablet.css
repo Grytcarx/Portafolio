@@ -23,18 +23,21 @@ main .mis-proyectos .proyectos-container {
 
 main .contactame {
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main .contactame .contenedor {
+    display: flex;
     flex-direction: row-reverse;
     align-items: center;
     text-align: left;
     gap: 10px;
-    max-width: max-content;
-    margin: 0 auto;
 }
-main .contactame form {
+main .contactame .contenedor form {
     display: flex;
     margin: 1.5rem;
     width: 400px;
 }
-main .contactame .texto {
+main .contactame .contenedor .texto {
     max-width: 200px;
 }
