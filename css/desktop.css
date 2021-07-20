@@ -43,7 +43,8 @@ header nav {
     position: relative;
     width: 100%;
     max-width: 100%;
-    left: auto;
+    margin-top: 30px;
+    left: 0px;
     transform: translateX(0%);
     height: auto;
     pointer-events: all;
@@ -54,12 +55,13 @@ header nav {
     animation-direction: alternate;
     animation-timing-function: ease-in;
     border-radius: 30px;
-    transition: all .5s;
+    transition: all 0s;
 }
 header .nav-movible {
+    margin-top: 0px;
     position: fixed;
-    width: 85%;
-    max-width: 82rem;
+    width: 90%;
+    max-width: 90rem;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -67,9 +69,13 @@ header .nav-movible {
 
 header nav ul {
     flex-direction: row;
+    justify-content: space-around;
+}
+header nav ul li {
+    width: max-content;
 }
 header nav ul li .texto-menu {
-    font-size: 2.6rem;
+    font-size: 2.5rem;
     line-height: 5rem;
     opacity: 1;
     animation-name: brillar-menu-letras;
