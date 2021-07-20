@@ -426,6 +426,36 @@ main .mis-proyectos .proyectos-container .article-container  .proyecto div h4 {
 main .contactame {
     text-align: center;
 }
+
+@keyframes balanceo-contactame-texto {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    10% {
+        transform: rotateZ(-20deg);
+    }
+    30% {
+        transform: rotateZ(20deg);
+    }
+    40% {
+        transform: rotateZ(-10deg);
+    }
+    45% {
+        transform: rotateZ(10deg);
+    }
+    50% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
+}
+main .contactame .texto {
+    animation-name: balanceo-contactame-texto;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
 main .contactame .texto h4 {
     margin-top: .8rem;
     font-size: 1.5rem;
