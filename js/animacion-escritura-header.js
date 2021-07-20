@@ -1,4 +1,4 @@
-const texto = document.getElementById("texto2-header");
+const texto2Header = document.getElementById("texto2-header");
 
 let posicionTexto2Header = 0;
 const textoTexto2Header = ["Desarrollador Web Junior.","Creador de soluciones."];
@@ -22,7 +22,7 @@ async function CambiarMensaje() {
 
     for(letra of textoActual){
         textoAux+=letra;
-        texto.innerHTML = textoAux;
+        texto2Header.innerHTML = textoAux;
         await Esperar(40);
     }
 
@@ -32,7 +32,7 @@ async function CambiarMensaje() {
         if(textoActual==""){
             textoActual = ".";
         }
-        texto.innerHTML = textoActual;
+        texto2Header.innerHTML = textoActual;
         await Esperar(40);
     }
     posicionTexto2Header++;
