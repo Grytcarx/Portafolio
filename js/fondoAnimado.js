@@ -1,7 +1,7 @@
 const sizeCirculo = 20; //pixeles
-const numCirculos = 7;
-const velocidadMS = 50;
-const desplazamientoPixeles = 5;
+const numCirculos = 6;
+const velocidadMS = 60;
+const desplazamientoPixeles = 6;
 const anchoLinea = 3;
 const colorLinea = "#00E5AE";
 const colorRelleno = "#8186F1";
@@ -40,8 +40,7 @@ function CrearCirculos(){
         //Posicionamiento
         let posX = Math.trunc((Math.random()*anchoFondo)-sizeCirculo/2);
         let posY = Math.trunc((Math.random()*altoFondo)-sizeCirculo/2);
-        div.style.left = `${posX}px`;
-        div.style.top = `${posY}px`;
+        div.style.transform = `translateX(${posX}px) translateY(${posY}px)`;
 
         circulos.push([
             posX, 
@@ -106,14 +105,14 @@ function MoverDivs(){
             circulos[i][3] = Math.trunc((Math.random()*altoFondo)-sizeCirculo/2);
         }
 
-        circulos[i][4].style.left = `${circulos[i][0]}px`;
-        circulos[i][4].style.top = `${circulos[i][1]}px`;
+        circulos[i][4].style.transform = `translateX(${circulos[i][0]}px) translateY(${circulos[i][1]}px)`;
     }
 }
 
 
 CrearCirculos();
 fondo.appendChild(cajaTempora);
+
 setInterval(()=>{
     MoverDivs();
     anchoFondo = screen.width;

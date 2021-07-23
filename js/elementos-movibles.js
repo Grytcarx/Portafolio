@@ -6,7 +6,7 @@ const secciones = main.children;
 let opcionesSecciones = {
     root: null,
     threshold: 0,
-    rootMargin: "-50px"
+    rootMargin: "-50px 0px 0px 0px"
 }
 
 const observadorSecciones = new IntersectionObserver(function(entradas,observadorSecciones){
@@ -16,7 +16,6 @@ const observadorSecciones = new IntersectionObserver(function(entradas,observado
         }else{
             entrada.target.classList.add("seccionVista");
         }
-        
     })
 }, opcionesSecciones);
 

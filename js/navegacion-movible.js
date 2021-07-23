@@ -23,7 +23,7 @@ window.addEventListener('resize', function evaluarSize(){
 
 // Declaración dle obervador
 const opcionesMenu = {
-    rootMargin: "-60px"
+    rootMargin: "-60px 0px 0px 0px"
 }
 const observadorMenu = new IntersectionObserver(function(entrada){
     entrada.forEach(item =>{

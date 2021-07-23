@@ -75,7 +75,7 @@ h3MisSkills.addEventListener('click',H3MisSkills);
 
 
 
-
+// Animacion para el "h3" mis proyectos
 const h3MisProyectos = document.getElementById("h3-mis-proyectos");
 h3MisProyectos.style.cursor = "pointer";
 let h3MisProyectosActivo = false;

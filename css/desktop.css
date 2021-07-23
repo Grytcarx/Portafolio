@@ -43,9 +43,7 @@ header nav {
     position: relative;
     width: 100%;
     max-width: 100%;
-    margin-top: 30px;
-    left: 0px;
-    transform: translateX(0%);
+    transform: translateX(0%) translateY(30px);
     height: auto;
     pointer-events: all;
     opacity: 1;
@@ -58,12 +56,11 @@ header nav {
     transition: all 0s;
 }
 header .nav-movible {
-    margin-top: 0px;
     position: fixed;
     width: 90%;
+    transform: scaleX(90%);
     max-width: 90rem;
-    left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(25%) translateY(0px);
 }
 
 
