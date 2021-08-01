@@ -210,7 +210,6 @@ header .name-container .foto:focus {
     box-shadow: 0px 0px 75px 3px var(--principal);
 }
 header .name-container .foto img {
-    width: 100%;
     object-fit: cover;
 }
 header .name-container .texto h1 {
