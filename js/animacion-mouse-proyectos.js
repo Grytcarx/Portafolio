@@ -39,7 +39,8 @@ padres.forEach(padre => {
     })
     
     padre.addEventListener('mouseleave', function(){
-        padre.firstElementChild.style.transition = "all 1s";
+        padre.firstElementChild.style.transitionProperty = "transform"
+        padre.firstElementChild.style.transitionDuration = "1s";
         padre.firstElementChild.style.transform = `rotateY(0deg)`;
     })
 

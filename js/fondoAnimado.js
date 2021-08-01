@@ -1,23 +1,11 @@
-const sizeCirculo = 20; //pixeles
-const numCirculos = 6;
-const velocidadMS = 60;
-const desplazamientoPixeles = 6;
-const anchoLinea = 3;
-const colorLinea = "#00E5AE";
-const colorRelleno = "#8186F1";
+const numCirculos = 5;
+const velocidadMS = 80;
+const desplazamientoPixeles = 4;
 
-
+let anchoFondo = screen.width;
+let altoFondo = screen.height;
 
 const fondo = document.getElementById("fondo-animado");
-anchoFondo = screen.width;
-altoFondo = screen.height;
-fondo.style.position = "fixed";
-fondo.style.top = "0";
-fondo.style.left = "0";
-fondo.style.width= `${anchoFondo}px`;
-fondo.style.height = `${altoFondo}px`;
-fondo.style.zIndex = "-1";
-
 
 const cajaTempora = document.createDocumentFragment();
 let circulos = [];
@@ -28,25 +16,16 @@ function CrearCirculos(){
 
         const div = document.createElement("DIV");
 
-        //Diseño
-        div.style.position = "absolute";
-        div.style.width = `${sizeCirculo}px`;
-        div.style.height = `${sizeCirculo}px`;
-        div.style.backgroundColor = `${colorRelleno}`;
-        div.style.border = `${anchoLinea}px solid ${colorLinea}`;
-        div.style.borderRadius = "0%";
-
-
         //Posicionamiento
-        let posX = Math.trunc((Math.random()*anchoFondo)-sizeCirculo/2);
-        let posY = Math.trunc((Math.random()*altoFondo)-sizeCirculo/2);
+        let posX = Math.trunc((Math.random()*anchoFondo));
+        let posY = Math.trunc((Math.random()*altoFondo));
         div.style.transform = `translateX(${posX}px) translateY(${posY}px)`;
 
         circulos.push([
             posX, 
             posY,
-            Math.trunc((Math.random()*anchoFondo)-sizeCirculo/2), 
-            Math.trunc((Math.random()*altoFondo)-sizeCirculo/2),
+            Math.trunc((Math.random()*anchoFondo)), 
+            Math.trunc((Math.random()*altoFondo)),
             div
         ]);
 
@@ -101,8 +80,8 @@ function MoverDivs(){
         }
 
         if(camino==2){
-            circulos[i][2] = Math.trunc((Math.random()*anchoFondo)-sizeCirculo/2);
-            circulos[i][3] = Math.trunc((Math.random()*altoFondo)-sizeCirculo/2);
+            circulos[i][2] = Math.trunc((Math.random()*anchoFondo));
+            circulos[i][3] = Math.trunc((Math.random()*altoFondo));
         }
 
         circulos[i][4].style.transform = `translateX(${circulos[i][0]}px) translateY(${circulos[i][1]}px)`;
@@ -115,6 +94,11 @@ fondo.appendChild(cajaTempora);
 
 setInterval(()=>{
     MoverDivs();
+},velocidadMS);
+
+window.addEventListener('resize', ()=>{
+    fondo.style.width= `100vw`;
+    fondo.style.height = `100vh`;
     anchoFondo = screen.width;
     altoFondo = screen.height;
-},velocidadMS);
+});

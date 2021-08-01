@@ -1,6 +1,5 @@
 // Animacion para el "h3" sobre mi
 const h3SobreMi = document.getElementById("h3-sobre-mi");
-h3SobreMi.style.cursor = "pointer";
 let h3SobreMiActivo = false;
 
 async function H3SobreMi(){
@@ -38,7 +37,6 @@ h3SobreMi.addEventListener('click', H3SobreMi);
 
 // Animacion para el "h3" mis skills
 const h3MisSkills = document.getElementById("h3-mis-skills");
-h3MisSkills.style.cursor = "pointer";
 let h3MisSkillsActivo = false;
 
 async function H3MisSkills(){
@@ -77,17 +75,17 @@ h3MisSkills.addEventListener('click',H3MisSkills);
 
 // Animacion para el "h3" mis proyectos
 const h3MisProyectos = document.getElementById("h3-mis-proyectos");
-h3MisProyectos.style.cursor = "pointer";
 let h3MisProyectosActivo = false;
 
 async function H3MisProyectos() {
     if(!h3MisProyectosActivo) {
         h3MisProyectosActivo = true;
 
-        h3MisProyectos.style.transition = "font-size .5s";
-        h3MisProyectos.style.fontSize = "3rem";
+        h3MisProyectos.style.transitionProperty = "transform:scale";
+        h3MisProyectos.style.transitionDuration = ".5s"
+        h3MisProyectos.style.transform = "scale(1.5) translateX(5rem";
         await Esperar(500);
-        h3MisProyectos.style.fontSize = "2.2rem";
+        h3MisProyectos.style.transform = "scale(1) translateX(0)";
         await Esperar(500);
         h3MisProyectosActivo = false;
     }
